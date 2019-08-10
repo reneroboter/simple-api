@@ -9,6 +9,8 @@ use App\Form\Type\ExerciseType;
 use Doctrine\ORM\EntityManagerInterface;
 use InvalidArgumentException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Form\FormFactory;
+use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -20,14 +22,14 @@ class ExerciseService
     protected $entityManager;
 
     /**
-     * @var ContainerInterface $container
+     * @var FormFactoryInterface $formFactory
      */
-    protected $container;
+    protected $formFactory;
 
-    public function __construct(EntityManagerInterface $entityManager, ContainerInterface $container)
+    public function __construct(EntityManagerInterface $entityManager, FormFactoryInterface $formFactory)
     {
         $this->entityManager = $entityManager;
-        $this->container = $container;
+        $this->formFactory = $formFactory;
     }
 
     /**
@@ -42,7 +44,7 @@ class ExerciseService
      */
     protected function createForm(string $type, $data = null, array $options = []): FormInterface
     {
-        return $this->container->get('form.factory')->create($type, $data, $options);
+        return $this->formFactory->create($type, $data, $options);
     }
 
     /**

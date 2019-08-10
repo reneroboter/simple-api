@@ -1,0 +1,11 @@
+### Login Request
+POST http://localhost/auth/login?XDEBUG_SESSION_START=XDEBUG_ECLIPSE
+Content-Type: application/json
+
+{
+  "email": "rene.backhaus@posteo.de",
+  "password": "hdnet"
+}
+> scripts/login.js
+
+###

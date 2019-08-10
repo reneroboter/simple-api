@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  database:
+    container_name: symfony_database
+    image: mysql:5.7
+    volumes:
+      - ./files/:/files:cached
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+      MYSQL_DATABASE: symfony
+  http:
+    container_name: symfony_http
+    image: webdevops/php-apache-dev
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - database
+    volumes:
+      - .:/app:cached
+      - ~/.ssh/:/root/.ssh/:cached
+    depends_on:
+      - database
+    environment:
+      - WEB_DOCUMENT_ROOT=/app/public

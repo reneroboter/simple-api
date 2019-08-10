@@ -1,0 +1,4 @@
+GET http://localhost/exercises/8?XDEBUG_SESSION_START=XDEBUG_ECLIPSE
+Authorization: Bearer {{token}}
+
+###

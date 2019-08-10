@@ -1,0 +1,13 @@
+### Create Exercise
+PUT http://localhost/exercises/8
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "exercise": {
+    "name": "Updated Exercise",
+    "reps": "4-5",
+    "date": "2019-08-02T00:00:00+00:00"
+  }
+}
+###

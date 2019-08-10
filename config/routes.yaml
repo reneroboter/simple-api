@@ -1,0 +1,14 @@
+api_login_check:
+    path: /auth/login
+
+gesdinet_jwt_refresh_token:
+    path:       /auth/refresh
+    controller: gesdinet.jwtrefreshtoken::refresh
+
+index:
+    path: /
+    controller: App\Controller\IndexController::index
+
+exercise:
+    type: rest
+    resource: App\Controller\ExerciseController

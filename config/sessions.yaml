@@ -1,2 +1,4 @@
-session:
-  name: symfony_api
+framework:
+  session:
+    name: symfony
+    

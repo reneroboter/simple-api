@@ -1,4 +1,6 @@
 {
+    "name": "reneroboter/simple-api",
+    "description": "simple-api",
     "type": "project",
     "license": "proprietary",
     "require": {

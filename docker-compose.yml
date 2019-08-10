@@ -13,7 +13,7 @@ services:
       MYSQL_DATABASE: symfony
   http:
     container_name: symfony_http
-    image: webdevops/php-apache-dev
+    image: webdevops/php-apache-dev:7.3
     ports:
       - 80:80
       - 443:443
